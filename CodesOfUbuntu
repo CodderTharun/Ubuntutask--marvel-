@@ -1,0 +1,22 @@
+# Create a folder named test
+mkdir test
+
+# Change directory into the test folder
+cd test
+
+# Create a blank file without using any text editor
+touch blankfile.txt
+
+# List the files in the folder
+ls
+
+# Create 2600 folders with random names (e.g., M90, B56)
+for i in {1..2600}; do
+    folder_name=$(tr -dc 'A-Za-z0-9' < /dev/urandom | head -c 3)$(shuf -i 10-99 -n 1)
+    mkdir "$folder_name"
+done
+
+# Concatenate two text files and display them on the terminal
+echo "This is the first file with some text." > file1.txt
+echo "This is the second file with more random text." > file2.txt
+cat file1.txt file2.txt
